@@ -1,13 +1,16 @@
+import { useState, useEffect } from 'react';
 
-import './App.css'
+export default function App() {
+  const [contador, setContador] = useState(null);
 
-function App() {
+  useEffect(() => {
+    console.log(`Contador actualizado: ${contador}`);
+  },[contador]);
 
   return (
-    <>
-     
-    </>
-  )
+    <div>
+      <p>{contador}</p>
+      <button onClick={() => setContador(contador + 1)}>Incrementar</button>
+    </div>
+  );
 }
-
-export default App
